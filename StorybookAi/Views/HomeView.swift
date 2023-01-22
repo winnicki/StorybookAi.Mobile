@@ -22,17 +22,15 @@ struct HomeView : View {
                 VStack(spacing:0) {
                     
                     HeadlineView(title: "My Stories")
-                    // Stories horizontal scroll
+                    
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(alignment: .top, spacing: 10) {
                             ForEach(stories, id: \.self) { story in
-                                //                                GeometryReader { geometry in
-                                CardView(story: story)
-                                //                                    .rotation3DEffect(Angle(degrees:
-                                //                                            Double(geometry.frame(in: .global).minX - 30) / -20
-                                //                                        ), axis: (x: 0, y: 10.0, z: 0))
-                                //                                }
-                                //                                    .frame(width: 180, height: 190)
+                                NavigationLink {
+                                    StoryView(story: story)
+                                } label : {
+                                    CardView(story: story)
+                                }
                             }
                         }
                         .padding(.horizontal)
