@@ -17,18 +17,18 @@ struct CardView: View {
             VStack(alignment: .leading) {
 //                Image()
                 Spacer()
-                Text("John Smith")
+                Text(story.Title!)
                     .font(.custom("Poppins-SemiBold", size: 16)) // TODO: add font extensions
                     .foregroundColor(.alwaysDark)
-                Text(story.Title!)
-                    .font(Font.custom("Poppins-Regular", size: 13))
-                    .foregroundColor(.alwaysDark)
+//                Text(story.Title!)
+//                    .font(Font.custom("Poppins-Regular", size: 13))
+//                    .foregroundColor(.alwaysDark)
             }
             Spacer()
         }
         .frame(width: 136, height: 144)
         .padding()
-        .background(Color(.blue)) // TODO: add color extension compatible with this type
+        .background(Color.banana) // TODO: add color extension compatible with this type
         .cornerRadius(25)
     }
 }
