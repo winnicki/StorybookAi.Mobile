@@ -1,6 +1,6 @@
 //
-//  PracticeSwiftUIApp.swift
-//  PracticeSwiftUI
+//  StorybookAiApp.swift
+//  StorybookAi
 //
 //  Created by Derek Winnicki on 2022-05-01.
 //
@@ -17,7 +17,7 @@ import RealmSwift
 let app: RealmSwift.App? = RealmSwift.App(id: "ama-kgtmc")
 
 @main
-struct PracticeSwiftUIApp: SwiftUI.App {
+struct StorybookAi: SwiftUI.App {
     var body: some Scene {
         WindowGroup {
             if let app = app {

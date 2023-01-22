@@ -19,7 +19,7 @@
 		A23429BA28661AE9001E2F2C /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429B928661AE9001E2F2C /* ErrorView.swift */; };
 		A23429BC28661B11001E2F2C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429BB28661B11001E2F2C /* LoginView.swift */; };
 		A23429BE28661B74001E2F2C /* OpenSyncedRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23429BD28661B74001E2F2C /* OpenSyncedRealm.swift */; };
-		A2930897281EBCF000AA941C /* PracticeSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2930896281EBCF000AA941C /* PracticeSwiftUIApp.swift */; };
+		A2930897281EBCF000AA941C /* StorybookAi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2930896281EBCF000AA941C /* StorybookAi.swift */; };
 		A293089B281EBCF000AA941C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A293089A281EBCF000AA941C /* Assets.xcassets */; };
 		A293089E281EBCF000AA941C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A293089D281EBCF000AA941C /* Preview Assets.xcassets */; };
 		A29308A7281EC53300AA941C /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A29308A5281EC53200AA941C /* Poppins-SemiBold.ttf */; };
@@ -49,7 +49,7 @@
 		A23429BB28661B11001E2F2C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A23429BD28661B74001E2F2C /* OpenSyncedRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSyncedRealm.swift; sourceTree = "<group>"; };
 		A2930893281EBCF000AA941C /* StorybookAi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StorybookAi.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A2930896281EBCF000AA941C /* PracticeSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeSwiftUIApp.swift; sourceTree = "<group>"; };
+		A2930896281EBCF000AA941C /* StorybookAi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorybookAi.swift; sourceTree = "<group>"; };
 		A293089A281EBCF000AA941C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A293089D281EBCF000AA941C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A29308A5281EC53200AA941C /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 		A293088A281EBCF000AA941C = {
 			isa = PBXGroup;
 			children = (
-				A2930895281EBCF000AA941C /* PracticeSwiftUI */,
+				A2930895281EBCF000AA941C /* StorybookAi */,
 				A2930894281EBCF000AA941C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,7 +104,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A2930895281EBCF000AA941C /* PracticeSwiftUI */ = {
+		A2930895281EBCF000AA941C /* StorybookAi */ = {
 			isa = PBXGroup;
 			children = (
 				A2F46A1E2868A30C00110309 /* Components */,
@@ -113,11 +113,11 @@
 				A29308B3281F614600AA941C /* Models */,
 				A29308A9281EC59A00AA941C /* Info.plist */,
 				A29308A4281EC4D100AA941C /* Resources */,
-				A2930896281EBCF000AA941C /* PracticeSwiftUIApp.swift */,
+				A2930896281EBCF000AA941C /* StorybookAi.swift */,
 				A293089A281EBCF000AA941C /* Assets.xcassets */,
 				A293089C281EBCF000AA941C /* Preview Content */,
 			);
-			path = PracticeSwiftUI;
+			path = StorybookAi;
 			sourceTree = "<group>";
 		};
 		A293089C281EBCF000AA941C /* Preview Content */ = {
@@ -268,7 +268,7 @@
 				A29308B5281F632000AA941C /* Topic.swift in Sources */,
 				A2F46A162867E1C300110309 /* ActionCardView.swift in Sources */,
 				A23429B628661A52001E2F2C /* CardView.swift in Sources */,
-				A2930897281EBCF000AA941C /* PracticeSwiftUIApp.swift in Sources */,
+				A2930897281EBCF000AA941C /* StorybookAi.swift in Sources */,
 				A2F46A202868A39E00110309 /* TopicView.swift in Sources */,
 				A2F46A1A2868085D00110309 /* TitleView.swift in Sources */,
 				A229E5162890C9D700F9EC2E /* User.swift in Sources */,
@@ -401,11 +401,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PracticeSwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"StorybookAi/Preview Content\"";
 				DEVELOPMENT_TEAM = 9QCKG92U86;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PracticeSwiftUI/Info.plist;
+				INFOPLIST_FILE = StorybookAi/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = StorybookAi;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -433,11 +433,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"PracticeSwiftUI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"StorybookAi/Preview Content\"";
 				DEVELOPMENT_TEAM = 9QCKG92U86;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = PracticeSwiftUI/Info.plist;
+				INFOPLIST_FILE = StorybookAi/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = StorybookAi;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
