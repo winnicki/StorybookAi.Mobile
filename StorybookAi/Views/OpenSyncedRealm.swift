@@ -15,7 +15,7 @@ struct OpenSyncedRealmView: View {
     // your Realm app before opening the realm.
     // Leave the `partitionValue` an empty string to get this
     // value from the environment object passed in above.
-    @AsyncOpen(appId: "ama-kgtmc", partitionValue: "PUBLIC", timeout: 4000) var asyncOpen
+    @AsyncOpen(appId: "sandbox-lzczy", partitionValue: "STORY", timeout: 4000) var asyncOpen
     
     var body: some View {
         
@@ -34,8 +34,8 @@ struct OpenSyncedRealmView: View {
             // The realm has been opened and is ready for use.
             // Show the content view.
             case .open(let realm):
-            HomeView(topics:Topic.stubMultiple)
-//                HomeView(topics: realm.objects(Topic.self))
+//            HomeView(topics:Topic.stubMultiple)
+            HomeView()
             
             // The realm is currently being downloaded from the server.
             // Show a progress view.

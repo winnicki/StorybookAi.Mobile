@@ -7,6 +7,4 @@ class User: Object, ObjectKeyIdentifiable {
     @Persisted var _partition: String?
 
     @Persisted var name: String
-    
-    @Persisted var availability: AvailabilitySettings?
 }

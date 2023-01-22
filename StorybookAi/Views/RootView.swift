@@ -21,9 +21,9 @@ struct RootView: View {
                 
                 switch selectedTab {
                 case .home:
-                    HomeView(topics:Topic.stubMultiple).environment(
+                    HomeView().environment(
                         \.realmConfiguration,
-                         user.configuration(partitionValue: "PUBLIC"))
+                         user.configuration(partitionValue: "STORY"))
                 case .search:
                     EmptyView()
                 case .profile:

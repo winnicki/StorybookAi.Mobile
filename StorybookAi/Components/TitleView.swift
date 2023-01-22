@@ -12,9 +12,9 @@ struct TitleView: View {
     var body: some View {
         HStack {
             VStack {
-                Text("👋 Welcome to the")
+                Text("👋 Welcome to ")
                     .font(.custom("Poppins-SemiBold", size: 20))
-                Button("Public Channel") {
+                Button("Storybook AI") {
                 }
                 .font(.custom("Poppins-SemiBold", size: 20))
             }
