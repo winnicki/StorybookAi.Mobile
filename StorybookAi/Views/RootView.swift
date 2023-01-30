@@ -34,7 +34,7 @@ struct RootView: View {
             }
         }
         else {
-            LoginView()
+            AppleSignInView()
         }
     }
 }

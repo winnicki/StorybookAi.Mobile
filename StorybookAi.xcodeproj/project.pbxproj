@@ -33,6 +33,7 @@
 		A2F46A18286807D300110309 /* HeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F46A17286807D300110309 /* HeadlineView.swift */; };
 		A2F46A1A2868085D00110309 /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F46A192868085D00110309 /* TitleView.swift */; };
 		A2F46A1D2868A0D400110309 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F46A1C2868A0D400110309 /* ColorExtensions.swift */; };
+		A2F7C71529885D2100B06F11 /* AppleSignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F7C71429885D2100B06F11 /* AppleSignInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,9 @@
 		A2F46A17286807D300110309 /* HeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineView.swift; sourceTree = "<group>"; };
 		A2F46A192868085D00110309 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		A2F46A1C2868A0D400110309 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		A2F7C71429885D2100B06F11 /* AppleSignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInView.swift; sourceTree = "<group>"; };
+		A2F7C7162988618300B06F11 /* StorybookAiDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StorybookAiDebug.entitlements; sourceTree = "<group>"; };
+		A2F7C7172988618E00B06F11 /* StorybookAiRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StorybookAiRelease.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 				A21D677E28662E9700D894A7 /* HomeView.swift */,
 				A230D959286A99B900B0D84E /* RootView.swift */,
 				A2D58AFD297DDD2A009227DE /* StoryView.swift */,
+				A2F7C71429885D2100B06F11 /* AppleSignInView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,6 +113,8 @@
 		A2930895281EBCF000AA941C /* StorybookAi */ = {
 			isa = PBXGroup;
 			children = (
+				A2F7C7172988618E00B06F11 /* StorybookAiRelease.entitlements */,
+				A2F7C7162988618300B06F11 /* StorybookAiDebug.entitlements */,
 				A2F46A1E2868A30C00110309 /* Components */,
 				A2F46A1B2868A0C900110309 /* Extensions */,
 				A23429B428661A22001E2F2C /* Views */,
@@ -257,6 +264,7 @@
 				A200DB0C297DCAAB00FDFF8E /* StoryPage.swift in Sources */,
 				A2F46A1D2868A0D400110309 /* ColorExtensions.swift in Sources */,
 				A21A338B286913D700EFF786 /* NavigationBar.swift in Sources */,
+				A2F7C71529885D2100B06F11 /* AppleSignInView.swift in Sources */,
 				A23429BE28661B74001E2F2C /* OpenSyncedRealm.swift in Sources */,
 				A230D95A286A99B900B0D84E /* RootView.swift in Sources */,
 				A23429BC28661B11001E2F2C /* LoginView.swift in Sources */,
@@ -399,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StorybookAi/StorybookAiDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StorybookAi/Preview Content\"";
@@ -432,6 +441,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StorybookAi/StorybookAiRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StorybookAi/Preview Content\"";
