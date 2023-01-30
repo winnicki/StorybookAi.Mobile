@@ -30,7 +30,7 @@ struct RootView: View {
                     EmptyView()
                 }
                 
-                TabBar()
+//                TabBar()
             }
         }
         else {

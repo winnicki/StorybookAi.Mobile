@@ -17,14 +17,15 @@ struct HomeView : View {
     @State private var searchText = ""
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing:0) {
                     
                     HeadlineView(title: "My Stories")
+                        .padding(.horizontal)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(alignment: .top, spacing: 10) {
+                        HStack(alignment: .center, spacing: 75) {
                             ForEach(stories, id: \.self) { story in
                                 GeometryReader { geometry in
                                     NavigationLink {
@@ -32,22 +33,23 @@ struct HomeView : View {
                                     } label : {
                                         CardView(story: story)
                                             .rotation3DEffect(Angle(
-                                                degrees: Double(geometry.frame(in: .global).minX - 40) / -20),
-                                                axis: (x: 0, y: 10.0, z: 0))
+                                                degrees: Double(geometry.frame(in: .global).minX - 40) / -70),
+                                                axis: (x: 0, y: 8.0, z: 0))
                                     }
                                 }
-                                .frame(width: 180, height: 190)
+                                .frame(width: 180, height: 300)
                             }
                         }
-                        .padding(.horizontal)
-                        .padding(.top, 8)
+                        .padding(.leading, 20)
+                        .padding(.trailing, 80)
+                        .padding(.top, 20)
                         .padding(.bottom, 20)
                         Spacer()
                     }
                 }
                 .navigationBarHidden(true)
                 .safeAreaInset(edge: .top, content: {
-                    Color.clear.frame(height: heightOfNavBar) 
+                    Color.clear.frame(height: heightOfNavBar)
                 })
                 .safeAreaInset(edge: .bottom, content: {
                     Color.clear.frame(height: heightOfTabBar)

@@ -14,15 +14,15 @@ struct StoryView: View {
     var body: some View {
         TabView {
             ForEach(story.Pages, id: \.self) { page in
-                Text(page.Paragraph!)
-                    .padding()
+                VStack {
+                    AsyncImage(url: URL(string: page.ImageUrl!))
+                    Text(page.Paragraph!)
+                        .padding()
+                }
             }
         }
         .tabViewStyle(.page)
         .indexViewStyle(.page(backgroundDisplayMode: .always))
-        .safeAreaInset(edge: .bottom, content: {
-            Color.clear.frame(height: heightOfTabBar)
-        })
     }
 }
 

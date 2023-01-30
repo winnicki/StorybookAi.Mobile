@@ -15,20 +15,18 @@ struct CardView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-//                Image()
                 Spacer()
                 Text(story.Title!)
                     .font(.custom("Poppins-SemiBold", size: 16)) // TODO: add font extensions
-                    .foregroundColor(.alwaysDark)
-//                Text(story.Title!)
-//                    .font(Font.custom("Poppins-Regular", size: 13))
-//                    .foregroundColor(.alwaysDark)
+                    .padding(8)
+                    .foregroundColor(.alwaysLight)
+                    .background(.black)
             }
             Spacer()
         }
-        .frame(width: 136, height: 144)
+        .frame(width: 200, height: 200)
         .padding()
-        .background(Color.banana) // TODO: add color extension compatible with this type
+        .background(AsyncImage(url: URL(string: story.Cover!)))
         .cornerRadius(25)
     }
 }
