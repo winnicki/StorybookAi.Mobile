@@ -31,10 +31,10 @@ struct HomeView : View {
                                     NavigationLink {
                                         StoryView(story: story)
                                     } label : {
-                                        CardView(story: story)
-                                            .rotation3DEffect(Angle(
-                                                degrees: Double(geometry.frame(in: .global).minX - 40) / -70),
-                                                axis: (x: 0, y: 8.0, z: 0))
+//                                        CardView(item: story)
+//                                            .rotation3DEffect(Angle(
+//                                                degrees: Double(geometry.frame(in: .global).minX - 40) / -70),
+//                                                axis: (x: 0, y: 8.0, z: 0))
                                     }
                                 }
                                 .frame(width: 180, height: 300)

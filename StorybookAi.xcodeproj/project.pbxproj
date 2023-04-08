@@ -16,6 +16,10 @@
 		A22B93A529E0CC3F00E7B4E6 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A22B93A429E0CC3B00E7B4E6 /* SF-Pro-Text-Regular.otf */; };
 		A22B93A629E0CC4100E7B4E6 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A22B93A329E0CC2700E7B4E6 /* SF-Pro-Text-Semibold.otf */; };
 		A22B93AA29E0CE4200E7B4E6 /* NameInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B93A929E0CE4200E7B4E6 /* NameInput.swift */; };
+		A22B93AC29E0FED300E7B4E6 /* CardsCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B93AB29E0FED300E7B4E6 /* CardsCarousel.swift */; };
+		A22B93AE29E101E300E7B4E6 /* CardItemExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B93AD29E101E300E7B4E6 /* CardItemExtensions.swift */; };
+		A22B93B029E1021100E7B4E6 /* CardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22B93AF29E1021100E7B4E6 /* CardItem.swift */; };
+		A22B93B229E1068F00E7B4E6 /* Fredoka-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A22B93B129E1068F00E7B4E6 /* Fredoka-SemiBold.ttf */; };
 		A230D956286A8C4000B0D84E /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230D955286A8C4000B0D84E /* Tab.swift */; };
 		A230D958286A93C000B0D84E /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230D957286A93C000B0D84E /* TabBar.swift */; };
 		A230D95A286A99B900B0D84E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A230D959286A99B900B0D84E /* RootView.swift */; };
@@ -52,6 +56,10 @@
 		A22B93A329E0CC2700E7B4E6 /* SF-Pro-Text-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Semibold.otf"; sourceTree = "<group>"; };
 		A22B93A429E0CC3B00E7B4E6 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		A22B93A929E0CE4200E7B4E6 /* NameInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameInput.swift; sourceTree = "<group>"; };
+		A22B93AB29E0FED300E7B4E6 /* CardsCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCarousel.swift; sourceTree = "<group>"; };
+		A22B93AD29E101E300E7B4E6 /* CardItemExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItemExtensions.swift; sourceTree = "<group>"; };
+		A22B93AF29E1021100E7B4E6 /* CardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardItem.swift; sourceTree = "<group>"; };
+		A22B93B129E1068F00E7B4E6 /* Fredoka-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Fredoka-SemiBold.ttf"; sourceTree = "<group>"; };
 		A230D955286A8C4000B0D84E /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		A230D957286A93C000B0D84E /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		A230D959286A99B900B0D84E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -123,6 +131,7 @@
 			children = (
 				A22B93A729E0CDFE00E7B4E6 /* Fonts */,
 				A22B93A929E0CE4200E7B4E6 /* NameInput.swift */,
+				A22B93AB29E0FED300E7B4E6 /* CardsCarousel.swift */,
 			);
 			path = "Components-Faible";
 			sourceTree = "<group>";
@@ -181,6 +190,7 @@
 		A29308A4281EC4D100AA941C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A22B93B129E1068F00E7B4E6 /* Fredoka-SemiBold.ttf */,
 				A22B93A429E0CC3B00E7B4E6 /* SF-Pro-Text-Regular.otf */,
 				A22B93A329E0CC2700E7B4E6 /* SF-Pro-Text-Semibold.otf */,
 				A24C1A0C29E0C8360073D359 /* Fredoka-Medium.ttf */,
@@ -197,6 +207,7 @@
 				A229E5152890C9D700F9EC2E /* User.swift */,
 				A200DB09297DC90000FDFF8E /* Story.swift */,
 				A200DB0B297DCAAB00FDFF8E /* StoryPage.swift */,
+				A22B93AF29E1021100E7B4E6 /* CardItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +217,7 @@
 			children = (
 				A2F46A1C2868A0D400110309 /* ColorExtensions.swift */,
 				A2D58AFB297DCF2D009227DE /* StoryExtensions.swift */,
+				A22B93AD29E101E300E7B4E6 /* CardItemExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -290,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A22B93B229E1068F00E7B4E6 /* Fredoka-SemiBold.ttf in Resources */,
 				A22B93A529E0CC3F00E7B4E6 /* SF-Pro-Text-Regular.otf in Resources */,
 				A29308A7281EC53300AA941C /* Poppins-SemiBold.ttf in Resources */,
 				A293089E281EBCF000AA941C /* Preview Assets.xcassets in Resources */,
@@ -326,11 +339,14 @@
 				A23429B828661A9D001E2F2C /* LogoutButton.swift in Sources */,
 				A200DB0A297DC90000FDFF8E /* Story.swift in Sources */,
 				A24C1A0929E0C3CA0073D359 /* CreateView.swift in Sources */,
+				A22B93AC29E0FED300E7B4E6 /* CardsCarousel.swift in Sources */,
 				A2F46A162867E1C300110309 /* ActionCardView.swift in Sources */,
 				A23429B628661A52001E2F2C /* CardView.swift in Sources */,
 				A2930897281EBCF000AA941C /* StorybookAi.swift in Sources */,
 				A2F46A1A2868085D00110309 /* TitleView.swift in Sources */,
 				A24C1A0B29E0C58E0073D359 /* PrimaryRoundedButtonStyle.swift in Sources */,
+				A22B93AE29E101E300E7B4E6 /* CardItemExtensions.swift in Sources */,
+				A22B93B029E1021100E7B4E6 /* CardItem.swift in Sources */,
 				A229E5162890C9D700F9EC2E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,18 +8,27 @@
 import SwiftUI
 
 struct CreateView: View {
+    
+    let items: [CardItem]
+    
     var body: some View {
         VStack {
             HStack {
                 Text("CREATE A NEW STORY")
-                    .font(.custom("Fredoka-Medium", size: 50))
+                    .font(.custom("Fredoka-SemiBold", size: 50))
                 Spacer()
                 Button("Skip", action: skip)
                     .buttonStyle(SecondaryButtonStyle())
             }
             .padding(.top, 100)
+            HStack {
+                Text("This is the subheader sentence for some steps")
+                    .font(.custom("SFProText-Regular", size: 24))
+                Spacer()
+            }
             Spacer()
-            NameInput()
+//            NameInput()
+            CardsCarousel(items: items)
             Spacer()
             HStack {
                 Button("Cancel", action: cancel)
@@ -30,6 +39,7 @@ struct CreateView: View {
             .padding(.bottom, 100)
         }
         .padding(.horizontal, 154)
+        .background(Color("FaibleBackground"))
     }
     
     func next() {
@@ -47,6 +57,6 @@ struct CreateView: View {
 
 struct CreateView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateView()
+        CreateView(items:CardItem.stubMultiple)
     }
 }
