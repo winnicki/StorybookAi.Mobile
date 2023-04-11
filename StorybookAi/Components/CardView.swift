@@ -13,20 +13,26 @@ struct CardView: View {
     let item: CardItem
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
+        Group {
+            HStack {
+                VStack(alignment: .leading) {
+                    Spacer()
+                    Text(item.name!)
+                        .font(.custom("Poppins-SemiBold", size: 16)) // TODO: add font extensions
+                        .padding(8)
+                        .foregroundColor(.alwaysLight)
+                        .background(.black)
+                }
                 Spacer()
-                Text(item.name!)
-                    .font(.custom("Poppins-SemiBold", size: 16)) // TODO: add font extensions
-                    .padding(8)
-                    .foregroundColor(.alwaysLight)
-                    .background(.black)
             }
-            Spacer()
+            .frame(width: 200, height: 200)
+            .padding()
+            .background(AsyncImage(url: URL(string: item.imageUrl!)))
+            .background(Color("SelectedDim"))
+            .cornerRadius(24)
         }
-        .frame(width: 200, height: 200)
-        .padding()
-        .background(AsyncImage(url: URL(string: item.imageUrl!)))
+        .padding(6)
+        .background(.white)
         .cornerRadius(24)
     }
 }
