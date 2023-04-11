@@ -27,8 +27,11 @@ struct CardView: View {
             }
             .frame(width: 200, height: 200)
             .padding()
-            .background(AsyncImage(url: URL(string: item.imageUrl!)))
-            .background(Color("SelectedDim"))
+            .background(Image(systemName: item.isSelected ? "checkmark.circle.fill" : "")
+                    .font(.system(size: 92, weight: .medium))
+                    .foregroundColor(.white))
+            .background(item.isSelected ? Color("SelectedDim") : .clear)
+            .background(Image(item.imageAsset!).resizable().scaledToFill())
             .cornerRadius(24)
         }
         .padding(6)

@@ -6,7 +6,7 @@ class CardItem: Object, ObjectKeyIdentifiable {
 
     @Persisted var _partition: String?
 
-    @Persisted var imageUrl: String?
+    @Persisted var imageAsset: String?
 
     @Persisted var name: String?
     
