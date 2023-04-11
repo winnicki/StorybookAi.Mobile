@@ -18,7 +18,7 @@ struct CardView: View {
                 VStack(alignment: .leading) {
                     Spacer()
                     Text(item.name!)
-                        .font(.custom("Poppins-SemiBold", size: 16)) // TODO: add font extensions
+                        .font(.custom("SFProText-Semibold", size: 24))
                         .padding(8)
                         .foregroundColor(.alwaysLight)
                         .background(.black)

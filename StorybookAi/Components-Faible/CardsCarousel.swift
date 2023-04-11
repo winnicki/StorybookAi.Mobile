@@ -20,7 +20,7 @@ struct CardsCarousel: View {
                     CardView(item: item)
                 }
             }
-            .padding(.leading, 20)
+            .padding(.leading, 60)
             .padding(.trailing, 80)
             .padding(.top, 20)
             .padding(.bottom, 20)

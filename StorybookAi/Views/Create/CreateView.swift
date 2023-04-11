@@ -13,19 +13,23 @@ struct CreateView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("CREATE A NEW STORY")
-                    .font(.custom("Fredoka-SemiBold", size: 50))
-                Spacer()
-                Button("Skip", action: skip)
-                    .buttonStyle(SecondaryButtonStyle())
+            Group {
+                HStack {
+                    Text("CREATE A NEW STORY")
+                        .font(.custom("Fredoka-SemiBold", size: 50))
+                    Spacer()
+                    Button("Skip", action: skip)
+                        .buttonStyle(SecondaryButtonStyle())
+                }
+                .padding(.top, 100)
+                HStack {
+                    Text("Choose a popular visual style for your story:")
+                        .font(.custom("SFProText-Regular", size: 24))
+                    Spacer()
+                }
             }
-            .padding(.top, 100)
-            HStack {
-                Text("This is the subheader sentence for some steps")
-                    .font(.custom("SFProText-Regular", size: 24))
-                Spacer()
-            }
+            .padding(.horizontal, 60)
+            
             Spacer()
 //            NameInput()
             CardsCarousel(items: items)
@@ -38,7 +42,6 @@ struct CreateView: View {
             }
             .padding(.bottom, 100)
         }
-        .padding(.horizontal, 154)
         .background(Color("FaibleBackground"))
     }
     
