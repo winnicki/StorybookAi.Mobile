@@ -33,6 +33,10 @@ struct CardView: View {
             .background(item.isSelected ? Color("SelectedDim") : .clear)
             .background(Image(item.imageAsset!).resizable().scaledToFill())
             .cornerRadius(24)
+            .contentShape(Rectangle())
+            .onTapGesture {
+                item.isSelected.toggle()
+            }
         }
         .padding(6)
         .background(.white)
