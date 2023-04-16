@@ -76,7 +76,7 @@ struct SignInWithAppleView: UIViewRepresentable {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SiginIn_Previews: PreviewProvider {
     static var previews: some View {
         AppleSignInView()
     }

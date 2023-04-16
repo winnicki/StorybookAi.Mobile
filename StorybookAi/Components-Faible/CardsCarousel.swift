@@ -14,8 +14,8 @@ struct CardsCarousel: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .center, spacing: 24) {
-                ForEach(items.indices, id: \.self) { index in
-                    CardView(item: $items[index])
+                ForEach(items, id: \.id) { item in
+                    CardView(item: item)
                 }
             }
             .padding(.leading, 60)

@@ -5,51 +5,51 @@
 //  Created by Derek Winnicki on 2022-06-24.
 //
 
-import Foundation
 import SwiftUI
+import RealmSwift
 
 struct CardView: View {
-    
-    @Binding var item: CardItem
+    @ObservedRealmObject var item: CardItem
     
     var body: some View {
-        Group {
-            HStack {
-                VStack(alignment: .leading) {
-                    Spacer()
-                    Text(item.name!)
-                        .font(.custom("SFProText-Semibold", size: 24))
-                        .padding(8)
-                        .foregroundColor(.alwaysLight)
-                        .background(.black)
-                }
-                Spacer()
-            }
-            .frame(width: 200, height: 200)
-            .padding()
-            .background(Image(systemName: item.isSelected ? "checkmark.circle.fill" : "")
-                    .font(.system(size: 92, weight: .medium))
-                    .foregroundColor(.white))
-            .background(item.isSelected ? Color("SelectedDim") : .clear)
-            .background(Image(item.imageAsset!).resizable().scaledToFill())
-            .cornerRadius(24)
-            .contentShape(Rectangle())
-            .onTapGesture {
-                item.isSelected.toggle()
-                print("tapped pressed!")
+        ZStack {
+            Image(item.imageAsset)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 200, height: 200)
+                .cornerRadius(16)
+                .padding(6)
+                .background(.white)
+                .cornerRadius(16)
+            
+            if item.isSelected {
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.system(size: 32, weight: .medium))
+                    .foregroundColor(.white)
+                    .offset(x: 70, y: -70)
             }
         }
-        .padding(6)
-        .background(.white)
-        .cornerRadius(24)
+        .onTapGesture {
+            try! Realm().write {
+                item.isSelected.toggle()
+            }
+        }
     }
 }
 
 struct CardView_Previews: PreviewProvider {
-    @State static private var stubSingle: CardItem = CardItem.stubSingle
-
     static var previews: some View {
-        CardView(item: $stubSingle)
+        let cardItem = CardItem(imageAsset: "human")
+        CardView(item: cardItem)
     }
 }
+
+
+//struct CardView_Previews: PreviewProvider {
+//    @State static private var stubSingle: CardItem = CardItem.stubSingle
+//
+//    static var previews: some View {
+//        CardView(item: $stubSingle)
+//    }
+//}
 

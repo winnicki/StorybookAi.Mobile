@@ -38,6 +38,7 @@
 		A29308A8281EC53300AA941C /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A29308A6281EC53200AA941C /* Poppins-Regular.ttf */; };
 		A29308B0281F570700AA941C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A29308AF281F570700AA941C /* Realm */; };
 		A29308B2281F570700AA941C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A29308B1281F570700AA941C /* RealmSwift */; };
+		A2CA682629EC6B97001771F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA682529EC6B97001771F0 /* ContentView.swift */; };
 		A2D58AFC297DCF2D009227DE /* StoryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D58AFB297DCF2D009227DE /* StoryExtensions.swift */; };
 		A2D58AFE297DDD2A009227DE /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D58AFD297DDD2A009227DE /* StoryView.swift */; };
 		A2F46A162867E1C300110309 /* ActionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F46A152867E1C300110309 /* ActionCardView.swift */; };
@@ -79,6 +80,7 @@
 		A29308A5281EC53200AA941C /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		A29308A6281EC53200AA941C /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		A29308A9281EC59A00AA941C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2CA682529EC6B97001771F0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A2D58AFB297DCF2D009227DE /* StoryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryExtensions.swift; sourceTree = "<group>"; };
 		A2D58AFD297DDD2A009227DE /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		A2F46A152867E1C300110309 /* ActionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCardView.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				A230D959286A99B900B0D84E /* RootView.swift */,
 				A2D58AFD297DDD2A009227DE /* StoryView.swift */,
 				A2F7C71429885D2100B06F11 /* AppleSignInView.swift */,
+				A2CA682529EC6B97001771F0 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				A2F46A1A2868085D00110309 /* TitleView.swift in Sources */,
 				A24C1A0B29E0C58E0073D359 /* PrimaryRoundedButtonStyle.swift in Sources */,
 				A22B93AE29E101E300E7B4E6 /* CardItemExtensions.swift in Sources */,
+				A2CA682629EC6B97001771F0 /* ContentView.swift in Sources */,
 				A22B93B029E1021100E7B4E6 /* CardItem.swift in Sources */,
 				A229E5162890C9D700F9EC2E /* User.swift in Sources */,
 			);

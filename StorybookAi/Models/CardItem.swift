@@ -2,21 +2,13 @@ import Foundation
 import RealmSwift
 
 class CardItem: Object, ObjectKeyIdentifiable {
-    @Persisted(primaryKey: true) var _id: ObjectId?
-    @Persisted var _partition: String?
-    @Persisted var imageAsset: String?
-    @Persisted var name: String?
+    @Persisted(primaryKey: true) var _id: ObjectId
+    @Persisted var imageAsset: String
+    @Persisted var isSelected: Bool
     
-    @Persisted private var _isSelected: Bool
-
-    var isSelected: Bool {
-        get {
-            return _isSelected
-        }
-        set {
-            realm?.beginWrite()
-            _isSelected = newValue
-            try? realm?.commitWrite()
-        }
+    convenience init(imageAsset: String) {
+        self.init()
+        self.imageAsset = imageAsset
+        self.isSelected = false
     }
 }
