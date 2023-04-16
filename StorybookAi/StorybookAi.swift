@@ -21,7 +21,8 @@ struct StorybookAi: SwiftUI.App {
     var body: some Scene {
         WindowGroup {
             if let app = app {
-                RootView(app: app)
+//                RootView(app: app)
+                CreateView()
             }
         }
     }

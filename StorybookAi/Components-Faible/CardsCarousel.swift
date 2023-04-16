@@ -9,15 +9,13 @@ import SwiftUI
 import RealmSwift
 
 struct CardsCarousel: View {
-    
-//    @ObservedResults(Story.self) var items
-    let items: [CardItem]
+    @Binding var items: [CardItem]
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .center, spacing: 24) {
-                ForEach(items, id: \.self) { item in
-                    CardView(item: item)
+                ForEach(items.indices, id: \.self) { index in
+                    CardView(item: $items[index])
                 }
             }
             .padding(.leading, 60)
@@ -30,7 +28,10 @@ struct CardsCarousel: View {
 }
 
 struct CardsCarousel_Previews: PreviewProvider {
+    @State static private var stubMultiple: [CardItem] = CardItem.stubMultiple
+
     static var previews: some View {
-        CardsCarousel(items:CardItem.stubMultiple)
+        CardsCarousel(items: $stubMultiple)
     }
 }
+

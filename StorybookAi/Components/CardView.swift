@@ -10,7 +10,7 @@ import SwiftUI
 
 struct CardView: View {
     
-    let item: CardItem
+    @Binding var item: CardItem
     
     var body: some View {
         Group {
@@ -36,6 +36,7 @@ struct CardView: View {
             .contentShape(Rectangle())
             .onTapGesture {
                 item.isSelected.toggle()
+                print("tapped pressed!")
             }
         }
         .padding(6)
@@ -45,7 +46,10 @@ struct CardView: View {
 }
 
 struct CardView_Previews: PreviewProvider {
+    @State static private var stubSingle: CardItem = CardItem.stubSingle
+
     static var previews: some View {
-        CardView(item:CardItem.stubSingle)
+        CardView(item: $stubSingle)
     }
 }
+

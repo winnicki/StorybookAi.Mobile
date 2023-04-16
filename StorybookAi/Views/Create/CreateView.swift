@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CreateView: View {
     
-    let items: [CardItem]
+    @State private var items: [CardItem] = CardItem.stubMultiple
     
     var body: some View {
         VStack {
@@ -32,7 +32,7 @@ struct CreateView: View {
             
             Spacer()
 //            NameInput()
-            CardsCarousel(items: items)
+            CardsCarousel(items: $items)
             Spacer()
             HStack {
                 Button("Cancel", action: cancel)
@@ -60,6 +60,6 @@ struct CreateView: View {
 
 struct CreateView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateView(items:CardItem.stubMultiple)
+        CreateView()
     }
 }
