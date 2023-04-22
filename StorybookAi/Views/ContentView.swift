@@ -2,7 +2,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        CardView(item: CardItem(imageAsset: "Human"))
+        CardView(item: CardItem(imageAsset: "Human")) { CardItem in
+
+        }
     }
 }
 

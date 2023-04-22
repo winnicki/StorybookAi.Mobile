@@ -11,6 +11,7 @@ import RealmSwift
 struct CardView: View {
     
     @ObservedRealmObject var item: CardItem
+    var onSelect: (CardItem) -> Void
     
     var body: some View {
         Group {
@@ -35,9 +36,7 @@ struct CardView: View {
             .cornerRadius(24)
             .contentShape(Rectangle())
             .onTapGesture {
-                try! Realm().write {
-                    item.isSelected.toggle()
-                }
+                onSelect(item)
             }
         }
         .padding(6)
@@ -49,7 +48,9 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         let cardItem = CardItem(imageAsset: "human")
-        CardView(item: cardItem)
+        CardView(item: cardItem) { CardItem in
+            
+        }
     }
 }
 
