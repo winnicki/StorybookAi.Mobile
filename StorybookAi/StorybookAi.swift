@@ -18,11 +18,16 @@ let app: RealmSwift.App? = RealmSwift.App(id: "sandbox-lzczy")
 
 @main
 struct StorybookAi: SwiftUI.App {
+    
+    init() {
+        let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
+        print("Realm file URL: \(realmURL)")
+    }
+    
     var body: some Scene {
         WindowGroup {
             if let app = app {
-//                RootView(app: app)
-                CreateView()
+                RootView(app: app)
             }
         }
     }

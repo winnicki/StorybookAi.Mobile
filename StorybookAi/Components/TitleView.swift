@@ -20,10 +20,15 @@ struct TitleView: View {
             }
             Spacer()
             Image(systemName: "magnifyingglass")
-//                .font(.system(size: 36))
                 .frame(width: 43, height: 43)
                 .foregroundColor(.gray600)
                 .background(Color("Neutral"), in: RoundedRectangle(cornerRadius: 15, style: .continuous))
+            NavigationLink(destination: CreateView()) {
+                Image(systemName: "plus")
+                    .frame(width: 43, height: 43)
+                    .foregroundColor(.gray600)
+                    .background(Color("Neutral"), in: RoundedRectangle(cornerRadius: 15, style: .continuous))
+            }
             Image("BananaAvatar")
         }
         .padding(.vertical, 16)

@@ -11,7 +11,6 @@ struct NavigationBar: View {
     
     var body: some View {
         TitleView()
-//            .background(.ultraThinMaterial)
             .background(.background)
             .frame(maxHeight: .infinity, alignment: .top)
     }
