@@ -10,7 +10,7 @@ import SwiftUI
 struct CreateView: View {
     
     @State private var items: [CardItem] = CardItem.stubMultiple
-    @State private var currentStep: CreateStep = .artStyle
+    @State private var currentStep: CreateStep = .createStory(.childsName)
     
     var body: some View {
         VStack {
@@ -47,6 +47,27 @@ struct CreateView: View {
     }
     
     func next() {
+        switch currentStep {
+            case .createStory(.childsName):
+                currentStep = .createStory(.duration)
+            case .createStory(.duration):
+                currentStep = .createStory(.age)
+            case .createStory(.age):
+                currentStep = .createStory(.gender)
+            case .createStory(.gender):
+                currentStep = .createStory(.storyName)
+            case .createStory(.storyName):
+                currentStep = .artStyle
+            case .artStyle:
+                currentStep = .characterStyle
+            case .characterStyle:
+                currentStep = .location
+            case .location:
+                currentStep = .moral
+            break
+            default:
+                currentStep = .createStory(.childsName)
+        }
     }
     
     func cancel() {
