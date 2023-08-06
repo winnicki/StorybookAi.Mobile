@@ -48,8 +48,7 @@ struct CardView: View {
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         let cardItem = CardItem(imageAsset: "human")
-        CardView(item: cardItem) { CardItem in
-            
+            CardView(item: cardItem) { CardItem in
         }
     }
 }

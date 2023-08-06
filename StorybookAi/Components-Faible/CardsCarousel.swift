@@ -10,7 +10,7 @@ import RealmSwift
 
 struct CardsCarousel: View {
     @Binding var items: [CardItem]
-    @State private var selectedItem: CardItem?
+    @State private(set) var SelectedItem: CardItem?
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -29,13 +29,13 @@ struct CardsCarousel: View {
     
     func handleCardSelection(selectedCard: CardItem) {
         try! Realm().write {
-            if selectedItem == selectedCard {
-                selectedItem?.isSelected.toggle()
-                selectedItem = nil
+            if SelectedItem == selectedCard {
+                SelectedItem?.isSelected.toggle()
+                SelectedItem = nil
             } else {
-                selectedItem?.isSelected = false
-                selectedItem = selectedCard
-                selectedItem?.isSelected = true
+                SelectedItem?.isSelected = false
+                SelectedItem = selectedCard
+                SelectedItem?.isSelected = true
             }
         }   
     }
