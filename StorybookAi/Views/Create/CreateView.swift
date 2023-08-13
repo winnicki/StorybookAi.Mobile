@@ -47,6 +47,10 @@ struct CreateView: View {
     }
     
     func next() {
+        
+        //TODO: save current step
+        
+        // move to next step
         switch currentStep {
             case .createStory(.childsName):
                 currentStep = .createStory(.duration)
@@ -82,11 +86,11 @@ struct CreateView: View {
     func stepView(for step: CreateStep) -> some View {
         switch step {
             case .createStory(.childsName):
-                return AnyView(NameInput())
+                AnyView(NameInput())
             case .artStyle:
-                return AnyView(CardsCarousel(items: $items))
+                AnyView(CardsCarousel(items: $items))
             default:
-                return AnyView(Text("default"))
+                AnyView(Text("default"))
         }
     }
 
