@@ -15,15 +15,10 @@ struct NumberCardView: View {
     var onSelect: (NumberItem) -> Void
     
     var body: some View {
-        Group {
-            HStack {
-                VStack(alignment: .center, spacing: 10) {
-                    Text(String(item.value))
-                        .font(Font.custom("SF Pro Text", size: 24).weight(.semibold))
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.black)
-                }
-            }
+        Text(String(item.value))
+            .font(Font.custom("SF Pro Text", size: 24).weight(.semibold))
+            .multilineTextAlignment(.center)
+            .foregroundColor(.black)
             .padding(.vertical, 24)
             .padding(.horizontal, 36)
             .background(item.isSelected ? Color(red: 1, green: 0.64, blue: 0.47) : .clear)
@@ -31,12 +26,13 @@ struct NumberCardView: View {
             .cornerRadius(24)
             .contentShape(Rectangle())
             .onTapGesture {
-                onSelect(item)
+                toggleSelection()
             }
-        }
-        .padding(6)
-        .background(.white)
-        .cornerRadius(24)
+    }
+    
+    public func toggleSelection() {
+        item.isSelected.toggle()
+        onSelect(item)
     }
 }
 

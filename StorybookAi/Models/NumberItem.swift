@@ -11,5 +11,9 @@ import SwiftUI
 struct NumberItem: Identifiable, Equatable {
     var id = UUID()
     var value: Int
-    var isSelected: Bool
+    @State var isSelected: Bool
+    
+    static func == (lhs: NumberItem, rhs: NumberItem) -> Bool {
+        return lhs.id == rhs.id
+    }
 }

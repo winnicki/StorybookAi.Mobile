@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CreateView: View {
     
-    @State private var items: [CardItem] = CardItem.stubMultiple
+    @State private var cardItems: [CardItem] = CardItem.stubMultiple
+    @State private var numberCardItems: [NumberItem] = NumberItem.stubMultiple
     @State private var currentStep: CreateStep = .createStory(.childsName)
     
     var body: some View {
@@ -87,8 +88,10 @@ struct CreateView: View {
         switch step {
             case .createStory(.childsName):
                 AnyView(NameInput())
+            case .createStory(.duration):
+                AnyView(NumberCardsCarousel(items: $numberCardItems))
             case .artStyle:
-                AnyView(CardsCarousel(items: $items))
+                AnyView(CardsCarousel(items: $cardItems))
             default:
                 AnyView(Text("default"))
         }

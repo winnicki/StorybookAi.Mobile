@@ -28,12 +28,10 @@ struct NumberCardsCarousel: View {
     
     func handleCardSelection(selectedCard: NumberItem) {
         if SelectedItem == selectedCard {
-            SelectedItem?.isSelected.toggle()
             SelectedItem = nil
         } else {
-            SelectedItem?.isSelected = false
             SelectedItem = selectedCard
-            SelectedItem?.isSelected = true
+            selectedCard.isSelected.toggle()
         }
     }
 }
