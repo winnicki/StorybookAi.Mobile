@@ -30,6 +30,13 @@ struct CreateView: View {
                         .buttonStyle(SecondaryButtonStyle())
                 }
                 .padding(.top, 100)
+                if (stepShowsSubtitleAtTop(for: currentStep)) {
+                    HStack {
+                        Text(stepSubtitle(for: currentStep))
+                            .font(.custom("SFProText-Regular", size: 24))
+                        Spacer()
+                    }
+                }
             }
             .padding(.horizontal, 60)
             
@@ -151,6 +158,29 @@ struct CreateView: View {
             return "Choose a primary location for your story:"
         case .moral:
             return "Choose the lesson you want your story to teach:"
+        }
+    }
+    
+    func stepShowsSubtitleAtTop(for step: CreateStep) -> Bool {
+        switch step {
+        case .createStory(.childsName):
+            return false
+        case .createStory(.duration):
+            return false
+        case .createStory(.age):
+            return false
+        case .createStory(.gender):
+            return false
+        case .createStory(.storyName):
+            return false
+        case .artStyle:
+            return true
+        case .characterStyle:
+            return true
+        case .location:
+            return true
+        case .moral:
+            return true
         }
     }
 }
