@@ -19,6 +19,10 @@ struct CreateView: View {
     @State private var selectedDuration: Int? = 1
     let durationOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     
+    // Age
+    @State private var selectedAge: Int? = 1
+    let ageOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    
     var body: some View {
         VStack {
             Group {
@@ -111,6 +115,15 @@ struct CreateView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         RadioButtonView(selectedOption: $selectedDuration, options: durationOptions, isHorizontal: true) { option in
                             NumberCardView(option: option, selectedOption: $selectedDuration)
+                        }
+                    }
+                })
+            
+            case .createStory(.age):
+                AnyView(InputView(header: stepSubtitle(for: currentStep)) {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        RadioButtonView(selectedOption: $selectedAge, options: ageOptions, isHorizontal: true) { option in
+                            NumberCardView(option: option, selectedOption: $selectedAge)
                         }
                     }
                 })
