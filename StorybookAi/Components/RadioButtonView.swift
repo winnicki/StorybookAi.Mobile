@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct RadioButtonView<Content>: View where Content: View {
-    @Binding var selectedOption: Int?
-    let options: [Int]
+    @Binding var selectedOption: String?
+    let options: [String]
     let isHorizontal: Bool
-    let content: (Int) -> Content
+    let content: (String) -> Content
 
     @ViewBuilder
     private func radioButtonList() -> some View {
@@ -38,11 +38,10 @@ struct RadioButtonView<Content>: View where Content: View {
 }
 
 struct RadioButtonView_Previews: PreviewProvider {
-    @State private static var selectedDuration: Int? = 1
-
+    @State static private var selectedOption: String? = nil
     static var previews: some View {
-        RadioButtonView(selectedOption: $selectedDuration, options: [1, 2, 3], isHorizontal: true) { option in
-            NumberCardView(option: option, selectedOption: $selectedDuration)
+        RadioButtonView(selectedOption: $selectedOption, options: ["1", "2", "3"], isHorizontal: true) { option in
+            NumberCardView(option: option, selectedOption: $selectedOption)
         }
     }
 }

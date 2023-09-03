@@ -16,12 +16,12 @@ struct CreateView: View {
     @State private var childName: String = ""
     
     // Duration
-    @State private var selectedDuration: Int? = 1
-    let durationOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    @State private var selectedDuration: String? = ""
+    let durationOptions = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
     
     // Age
-    @State private var selectedAge: Int? = 1
-    let ageOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    @State private var selectedAge: String? = ""
+    let ageOptions = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
     
     var body: some View {
         VStack {

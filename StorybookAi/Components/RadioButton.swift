@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct RadioButton<Content>: View where Content: View {
-    let option: Int
-    @Binding var selectedOption: Int?
+    let option: String
+    @Binding var selectedOption: String?
     let content: () -> Content
 
     var body: some View {

@@ -10,8 +10,8 @@ import RealmSwift
 
 struct NumberCardView: View {
     
-    let option: Int
-    @Binding var selectedOption: Int?
+    let option: String
+    @Binding var selectedOption: String?
     
     var body: some View {
         Text(String(option))
@@ -29,7 +29,7 @@ struct NumberCardView: View {
 
 struct NumberCardView_Previews: PreviewProvider {
     static var previews: some View {
-        NumberCardView(option: 1, selectedOption: .constant(1)) // Use .constant to provide a constant binding
+        NumberCardView(option: "1", selectedOption: .constant("1")) // Use .constant to provide a constant binding
     }
 }
 
