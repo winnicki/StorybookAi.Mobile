@@ -10,38 +10,27 @@ import RealmSwift
 
 struct NumberCardView: View {
     
-    var value: Int
-    @State var isSelected: Bool
-    var onSelect: (Int) -> Void
+    let option: Int
+    @Binding var selectedOption: Int?
     
     var body: some View {
-        Text(String(value))
+        Text(String(option))
             .font(Font.custom("SF Pro Text", size: 24).weight(.semibold))
             .multilineTextAlignment(.center)
             .foregroundColor(.black)
             .padding(.vertical, 24)
             .padding(.horizontal, 36)
-            .background(isSelected ? Color(red: 1, green: 0.64, blue: 0.47) : .clear)
+            .background(selectedOption == option ? Color(red: 1, green: 0.64, blue: 0.47) : .clear)
             .background(Color("FaibleBackground"))
             .cornerRadius(24)
             .contentShape(Rectangle())
-            .onTapGesture {
-                toggleSelection()
-            }
-    }
-    
-    public func toggleSelection() {
-        isSelected.toggle()
-        onSelect(value)
     }
 }
 
 struct NumberCardView_Previews: PreviewProvider {
-    @State static var isSelected = true  // Add a @State property
     static var previews: some View {
-        NumberCardView(value: 1, isSelected: isSelected) { selectedValue in
-            isSelected.toggle()
-        }
+        NumberCardView(option: 1, selectedOption: .constant(1)) // Use .constant to provide a constant binding
     }
 }
+
 

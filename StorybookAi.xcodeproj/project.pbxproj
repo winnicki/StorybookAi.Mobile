@@ -39,9 +39,10 @@
 		A29308B0281F570700AA941C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = A29308AF281F570700AA941C /* Realm */; };
 		A29308B2281F570700AA941C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A29308B1281F570700AA941C /* RealmSwift */; };
 		A2CA682629EC6B97001771F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA682529EC6B97001771F0 /* ContentView.swift */; };
+		A2CED25A2AA4EAE2000E613A /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CED2592AA4EAE2000E613A /* RadioButton.swift */; };
+		A2CED25C2AA4ED0C000E613A /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CED25B2AA4ED0C000E613A /* RadioButtonView.swift */; };
 		A2D58AFC297DCF2D009227DE /* StoryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D58AFB297DCF2D009227DE /* StoryExtensions.swift */; };
 		A2D58AFE297DDD2A009227DE /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D58AFD297DDD2A009227DE /* StoryView.swift */; };
-		A2E57BCC2A807B8E00DAEB6B /* NumberCardsCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E57BCB2A807B8E00DAEB6B /* NumberCardsCarousel.swift */; };
 		A2E57BD02A807E9600DAEB6B /* NumberCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E57BCF2A807E9600DAEB6B /* NumberCardView.swift */; };
 		A2F46A162867E1C300110309 /* ActionCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F46A152867E1C300110309 /* ActionCardView.swift */; };
 		A2F46A18286807D300110309 /* HeadlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F46A17286807D300110309 /* HeadlineView.swift */; };
@@ -83,9 +84,10 @@
 		A29308A6281EC53200AA941C /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		A29308A9281EC59A00AA941C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2CA682529EC6B97001771F0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A2CED2592AA4EAE2000E613A /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		A2CED25B2AA4ED0C000E613A /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
 		A2D58AFB297DCF2D009227DE /* StoryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryExtensions.swift; sourceTree = "<group>"; };
 		A2D58AFD297DDD2A009227DE /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
-		A2E57BCB2A807B8E00DAEB6B /* NumberCardsCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCardsCarousel.swift; sourceTree = "<group>"; };
 		A2E57BCF2A807E9600DAEB6B /* NumberCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCardView.swift; sourceTree = "<group>"; };
 		A2F46A152867E1C300110309 /* ActionCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCardView.swift; sourceTree = "<group>"; };
 		A2F46A17286807D300110309 /* HeadlineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineView.swift; sourceTree = "<group>"; };
@@ -139,7 +141,6 @@
 				A22B93A729E0CDFE00E7B4E6 /* Fonts */,
 				A22B93A929E0CE4200E7B4E6 /* NameInput.swift */,
 				A22B93AB29E0FED300E7B4E6 /* CardsCarousel.swift */,
-				A2E57BCB2A807B8E00DAEB6B /* NumberCardsCarousel.swift */,
 			);
 			path = "Components-Faible";
 			sourceTree = "<group>";
@@ -242,6 +243,8 @@
 				A21A338A286913D700EFF786 /* NavigationBar.swift */,
 				A230D957286A93C000B0D84E /* TabBar.swift */,
 				A2E57BCF2A807E9600DAEB6B /* NumberCardView.swift */,
+				A2CED2592AA4EAE2000E613A /* RadioButton.swift */,
+				A2CED25B2AA4ED0C000E613A /* RadioButtonView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -338,8 +341,8 @@
 				A21A338B286913D700EFF786 /* NavigationBar.swift in Sources */,
 				A2F7C71529885D2100B06F11 /* AppleSignInView.swift in Sources */,
 				A23429BE28661B74001E2F2C /* OpenSyncedRealm.swift in Sources */,
+				A2CED25C2AA4ED0C000E613A /* RadioButtonView.swift in Sources */,
 				A230D95A286A99B900B0D84E /* RootView.swift in Sources */,
-				A2E57BCC2A807B8E00DAEB6B /* NumberCardsCarousel.swift in Sources */,
 				A23429BC28661B11001E2F2C /* LoginView.swift in Sources */,
 				A2E57BD02A807E9600DAEB6B /* NumberCardView.swift in Sources */,
 				A23429BA28661AE9001E2F2C /* ErrorView.swift in Sources */,
@@ -352,6 +355,7 @@
 				A24C1A0929E0C3CA0073D359 /* CreateView.swift in Sources */,
 				A22B93AC29E0FED300E7B4E6 /* CardsCarousel.swift in Sources */,
 				A2F46A162867E1C300110309 /* ActionCardView.swift in Sources */,
+				A2CED25A2AA4EAE2000E613A /* RadioButton.swift in Sources */,
 				A23429B628661A52001E2F2C /* CardView.swift in Sources */,
 				A2930897281EBCF000AA941C /* StorybookAi.swift in Sources */,
 				A2F46A1A2868085D00110309 /* TitleView.swift in Sources */,

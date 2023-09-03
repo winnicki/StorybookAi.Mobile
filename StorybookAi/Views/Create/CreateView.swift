@@ -12,6 +12,10 @@ struct CreateView: View {
     @State private var cardItems: [CardItem] = CardItem.stubMultiple
     @State private var currentStep: CreateStep = .createStory(.childsName)
     
+    // Duration
+    @State private var selectedDuration: Int? = 1
+    let durationOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    
     var body: some View {
         VStack {
             Group {
@@ -85,12 +89,21 @@ struct CreateView: View {
     @ViewBuilder
     func stepView(for step: CreateStep) -> some View {
         switch step {
+            
             case .createStory(.childsName):
                 AnyView(NameInput())
+            
             case .createStory(.duration):
-                AnyView(NumberCardsCarousel())
+                AnyView(ScrollView(.horizontal, showsIndicators: false) {
+                    RadioButtonView(selectedOption: $selectedDuration, options: durationOptions, isHorizontal: true) { option in
+                        NumberCardView(option: option, selectedOption: $selectedDuration)
+                    }
+                })
+                .padding(.horizontal, 60)
+            
             case .artStyle:
                 AnyView(CardsCarousel(items: $cardItems))
+            
             default:
                 AnyView(Text("default"))
         }
