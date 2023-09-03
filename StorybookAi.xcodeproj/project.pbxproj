@@ -41,6 +41,7 @@
 		A2CA682629EC6B97001771F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CA682529EC6B97001771F0 /* ContentView.swift */; };
 		A2CED25A2AA4EAE2000E613A /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CED2592AA4EAE2000E613A /* RadioButton.swift */; };
 		A2CED25C2AA4ED0C000E613A /* RadioButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CED25B2AA4ED0C000E613A /* RadioButtonView.swift */; };
+		A2CED2602AA4FF4E000E613A /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CED25F2AA4FF4E000E613A /* InputView.swift */; };
 		A2D58AFC297DCF2D009227DE /* StoryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D58AFB297DCF2D009227DE /* StoryExtensions.swift */; };
 		A2D58AFE297DDD2A009227DE /* StoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D58AFD297DDD2A009227DE /* StoryView.swift */; };
 		A2E57BD02A807E9600DAEB6B /* NumberCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E57BCF2A807E9600DAEB6B /* NumberCardView.swift */; };
@@ -86,6 +87,7 @@
 		A2CA682529EC6B97001771F0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A2CED2592AA4EAE2000E613A /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		A2CED25B2AA4ED0C000E613A /* RadioButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButtonView.swift; sourceTree = "<group>"; };
+		A2CED25F2AA4FF4E000E613A /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 		A2D58AFB297DCF2D009227DE /* StoryExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryExtensions.swift; sourceTree = "<group>"; };
 		A2D58AFD297DDD2A009227DE /* StoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryView.swift; sourceTree = "<group>"; };
 		A2E57BCF2A807E9600DAEB6B /* NumberCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCardView.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				A2E57BCF2A807E9600DAEB6B /* NumberCardView.swift */,
 				A2CED2592AA4EAE2000E613A /* RadioButton.swift */,
 				A2CED25B2AA4ED0C000E613A /* RadioButtonView.swift */,
+				A2CED25F2AA4FF4E000E613A /* InputView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				A24C1A0B29E0C58E0073D359 /* PrimaryRoundedButtonStyle.swift in Sources */,
 				A22B93AE29E101E300E7B4E6 /* CardItemExtensions.swift in Sources */,
 				A2CA682629EC6B97001771F0 /* ContentView.swift in Sources */,
+				A2CED2602AA4FF4E000E613A /* InputView.swift in Sources */,
 				A22B93B029E1021100E7B4E6 /* CardItem.swift in Sources */,
 				A229E5162890C9D700F9EC2E /* User.swift in Sources */,
 			);

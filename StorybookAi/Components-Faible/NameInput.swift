@@ -24,10 +24,6 @@ struct NameInput: View {
                         "Alex or Nathalia...",
                         text: $childName
                     )
-        //            .focused($isFocused)
-                    .onSubmit {
-        //                validate(name: childName)
-                    }
                     .textInputAutocapitalization(.never)
                     .disableAutocorrection(true)
                     .font(.custom("SFProText-Regular", size: 48))

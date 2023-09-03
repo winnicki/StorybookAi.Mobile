@@ -12,6 +12,9 @@ struct CreateView: View {
     @State private var cardItems: [CardItem] = CardItem.stubMultiple
     @State private var currentStep: CreateStep = .createStory(.childsName)
     
+    // Name
+    @State private var childName: String = ""
+    
     // Duration
     @State private var selectedDuration: Int? = 1
     let durationOptions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
@@ -27,11 +30,6 @@ struct CreateView: View {
                         .buttonStyle(SecondaryButtonStyle())
                 }
                 .padding(.top, 100)
-                HStack {
-                    Text(stepSubtitle(for: currentStep))
-                        .font(.custom("SFProText-Regular", size: 24))
-                    Spacer()
-                }
             }
             .padding(.horizontal, 60)
             
@@ -91,15 +89,24 @@ struct CreateView: View {
         switch step {
             
             case .createStory(.childsName):
-                AnyView(NameInput())
+            AnyView(InputView(header: stepSubtitle(for: currentStep)) {
+                    TextField(
+                            "Alex or Nathalia...",
+                            text: $childName
+                        )
+                        .textInputAutocapitalization(.never)
+                        .disableAutocorrection(true)
+                        .font(.custom("SFProText-Regular", size: 48))
+                })
             
             case .createStory(.duration):
-                AnyView(ScrollView(.horizontal, showsIndicators: false) {
-                    RadioButtonView(selectedOption: $selectedDuration, options: durationOptions, isHorizontal: true) { option in
-                        NumberCardView(option: option, selectedOption: $selectedDuration)
+                AnyView(InputView(header: stepSubtitle(for: currentStep)) {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        RadioButtonView(selectedOption: $selectedDuration, options: durationOptions, isHorizontal: true) { option in
+                            NumberCardView(option: option, selectedOption: $selectedDuration)
+                        }
                     }
                 })
-                .padding(.horizontal, 60)
             
             case .artStyle:
                 AnyView(CardsCarousel(items: $cardItems))
