@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct NumberCardsCarousel: View {
-    @Binding var items: [NumberItem]
-    @State private(set) var SelectedItem: NumberItem?
+    private let items = [1, 2, 3, 4, 5] // Replace with your desired values
+    @State private var selectedItem: Int?
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .center, spacing: 24) {
-                ForEach(items.indices, id: \.self) { index in
-                    NumberCardView(item: items[index], onSelect: handleCardSelection)
+                ForEach(items, id: \.self) { value in
+                    NumberCardView(value: value, isSelected: isSelected(value), onSelect: handleCardSelection(selectedCard:))
                 }
             }
             .padding(.leading, 60)
@@ -26,19 +26,21 @@ struct NumberCardsCarousel: View {
         }
     }
     
-    func handleCardSelection(selectedCard: NumberItem) {
-        if SelectedItem == selectedCard {
-            SelectedItem = nil
+    private func isSelected(_ cardValue: Int) -> Bool {
+        return selectedItem == cardValue
+    }
+    
+    private func handleCardSelection(selectedCard: Int) {
+        if selectedItem == selectedCard {
+            selectedItem = nil
         } else {
-            SelectedItem = selectedCard
-            selectedCard.isSelected.toggle()
+            selectedItem = selectedCard
         }
     }
 }
 
 struct NumberCardsCarousel_Previews: PreviewProvider {
-    @State static private var stubMultiple: [NumberItem] = NumberItem.stubMultiple
-
     static var previews: some View {
-        NumberCardsCarousel(items: $stubMultiple)
-    }}
+        NumberCardsCarousel()
+    }
+}

@@ -10,18 +10,18 @@ import RealmSwift
 
 struct NumberCardView: View {
     
-    @State var item: NumberItem
-    
-    var onSelect: (NumberItem) -> Void
+    var value: Int
+    @State var isSelected: Bool
+    var onSelect: (Int) -> Void
     
     var body: some View {
-        Text(String(item.value))
+        Text(String(value))
             .font(Font.custom("SF Pro Text", size: 24).weight(.semibold))
             .multilineTextAlignment(.center)
             .foregroundColor(.black)
             .padding(.vertical, 24)
             .padding(.horizontal, 36)
-            .background(item.isSelected ? Color(red: 1, green: 0.64, blue: 0.47) : .clear)
+            .background(isSelected ? Color(red: 1, green: 0.64, blue: 0.47) : .clear)
             .background(Color("FaibleBackground"))
             .cornerRadius(24)
             .contentShape(Rectangle())
@@ -31,15 +31,17 @@ struct NumberCardView: View {
     }
     
     public func toggleSelection() {
-        item.isSelected.toggle()
-        onSelect(item)
+        isSelected.toggle()
+        onSelect(value)
     }
 }
 
 struct NumberCardView_Previews: PreviewProvider {
+    @State static var isSelected = true  // Add a @State property
     static var previews: some View {
-        let NumberItem = NumberItem(value:1, isSelected: true)
-            NumberCardView(item: NumberItem) { NumberItem in
+        NumberCardView(value: 1, isSelected: isSelected) { selectedValue in
+            isSelected.toggle()
         }
     }
 }
+

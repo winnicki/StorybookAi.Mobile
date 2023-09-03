@@ -10,7 +10,6 @@ import SwiftUI
 struct CreateView: View {
     
     @State private var cardItems: [CardItem] = CardItem.stubMultiple
-    @State private var numberCardItems: [NumberItem] = NumberItem.stubMultiple
     @State private var currentStep: CreateStep = .createStory(.childsName)
     
     var body: some View {
@@ -89,7 +88,7 @@ struct CreateView: View {
             case .createStory(.childsName):
                 AnyView(NameInput())
             case .createStory(.duration):
-                AnyView(NumberCardsCarousel(items: $numberCardItems))
+                AnyView(NumberCardsCarousel())
             case .artStyle:
                 AnyView(CardsCarousel(items: $cardItems))
             default:
