@@ -27,12 +27,10 @@ struct RadioButtonView<Content>: View where Content: View {
             HStack {
                 radioButtonList()
             }
-            .padding()
         } else {
             VStack {
                 radioButtonList()
             }
-            .padding()
         }
     }
 }

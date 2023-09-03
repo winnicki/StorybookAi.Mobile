@@ -18,17 +18,21 @@ struct InputView<Content>: View where Content: View {
                 HStack {
                     Text(header)
                         .font(.custom("SFProText-Regular", size: 24))
+//                        .padding(.horizontal, 45)
                     Spacer()
                 }
                 content()
                     .padding()
             }
-            .padding(24)
+            .frame(height:173)
+            .padding(.horizontal, 45)
+            .padding(.vertical, 24)
             .background(.white)
             .cornerRadius(24)
             .shadow(color: Color.black.opacity(0.15), radius: 30, x: 0, y: 10)
         }
         .padding(.horizontal, 60)
+        
     }
 }
 

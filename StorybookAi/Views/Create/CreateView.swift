@@ -12,7 +12,7 @@ struct CreateView: View {
     @State private var cardItems: [CardItem] = CardItem.stubMultiple
     @State private var currentStep: CreateStep = .createStory(.childsName)
     
-    // Name
+    // Child Name
     @State private var childName: String = ""
     
     // Duration
@@ -22,6 +22,13 @@ struct CreateView: View {
     // Age
     @State private var selectedAge: String? = ""
     let ageOptions = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
+    
+    // Gender
+    @State private var selectedGender: String? = ""
+    let genderOptions = ["Boy", "Girl", "Prefer not to say"]
+    
+    // Story Name
+    @State private var storyName: String = ""
     
     var body: some View {
         VStack {
@@ -127,6 +134,26 @@ struct CreateView: View {
                         }
                     }
                 })
+            
+            case .createStory(.gender):
+                AnyView(InputView(header: stepSubtitle(for: currentStep)) {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        RadioButtonView(selectedOption: $selectedGender, options: genderOptions, isHorizontal: true) { option in
+                            NumberCardView(option: option, selectedOption: $selectedGender)
+                        }
+                    }
+                })
+            
+            case .createStory(.storyName):
+                AnyView(InputView(header: stepSubtitle(for: currentStep)) {
+                        TextField(
+                                "eg: Nat the hero of the jungle...",
+                                text: $storyName
+                            )
+                            .textInputAutocapitalization(.never)
+                            .disableAutocorrection(true)
+                            .font(.custom("SFProText-Regular", size: 48))
+                    })
             
             case .artStyle:
                 AnyView(CardsCarousel(items: $cardItems))
