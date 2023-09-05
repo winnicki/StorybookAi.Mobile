@@ -31,39 +31,41 @@ struct CreateView: View {
     @State private var storyName: String = ""
     
     var body: some View {
-        VStack {
-            Group {
-                HStack {
-                    Text(stepTitle(for: currentStep))
-                        .font(.custom("Fredoka-SemiBold", size: 50))
-                    Spacer()
-                    Button("Skip", action: skip)
-                        .buttonStyle(SecondaryButtonStyle())
-                }
-                .padding(.top, 100)
-                if (stepShowsSubtitleAtTop(for: currentStep)) {
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack {
+                Group {
                     HStack {
-                        Text(stepSubtitle(for: currentStep))
-                            .font(.custom("SFProText-Regular", size: 24))
+                        Text(stepTitle(for: currentStep))
+                            .font(.custom("Fredoka-SemiBold", size: 50))
                         Spacer()
+                        Button("Skip", action: skip)
+                            .buttonStyle(SecondaryButtonStyle())
+                    }
+                    .padding(.top, 100)
+                    if (stepShowsSubtitleAtTop(for: currentStep)) {
+                        HStack {
+                            Text(stepSubtitle(for: currentStep))
+                                .font(.custom("SFProText-Regular", size: 24))
+                            Spacer()
+                        }
                     }
                 }
+                .padding(.horizontal, 60)
+                
+                Spacer()
+                stepView(for: currentStep)
+                Spacer()
+                
+                HStack {
+                    Button("Cancel", action: cancel)
+                        .buttonStyle(SecondaryButtonStyle())
+                    Button("Next", action: next)
+                        .buttonStyle(PrimaryRoundedButtonStyle())
+                }
+                .padding(.bottom, 100)
             }
-            .padding(.horizontal, 60)
-            
-            Spacer()
-            stepView(for: currentStep)
-            Spacer()
-            
-            HStack {
-                Button("Cancel", action: cancel)
-                    .buttonStyle(SecondaryButtonStyle())
-                Button("Next", action: next)
-                    .buttonStyle(PrimaryRoundedButtonStyle())
-            }
-            .padding(.bottom, 100)
+            .background(Color("FaibleBackground"))
         }
-        .background(Color("FaibleBackground"))
     }
     
     func next() {
