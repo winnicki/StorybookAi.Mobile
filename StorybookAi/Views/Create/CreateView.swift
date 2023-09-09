@@ -29,6 +29,10 @@ struct CreateView: View {
     @State private var selectedGender: String? = ""
     let genderOptions = ["Boy", "Girl", "Prefer not to say"]
     
+    // Gender
+    @State private var selectedMoral: String? = ""
+    let moralOptions = ["Sharing", "Caring", "Courage", "Humility", "Respect", "Friendship", "Honesty"]
+    
     // Story Name
     @State private var storyName: String = ""
     
@@ -180,8 +184,15 @@ struct CreateView: View {
             case .location:
                 AnyView(CardsCarousel(items: $locationItems)).padding(.vertical, 100)
             
-            default:
-                AnyView(Text("default"))
+            case .moral:
+                AnyView(InputView(header: stepSubtitle(for: currentStep)) {
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        RadioButtonView(selectedOption: $selectedMoral, options: moralOptions, isHorizontal: true) { option in
+                            NumberCardView(option: option, selectedOption: $selectedMoral)
+                        }
+                    }
+                })
+            
         }
     }
 
@@ -242,7 +253,7 @@ struct CreateView: View {
         case .location:
             return true
         case .moral:
-            return true
+            return false
         }
     }
 }
