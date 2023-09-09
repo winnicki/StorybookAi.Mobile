@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CreateView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     @State private var artStyleItems: [CardItem] = CardItem.stubMultipleArtStyleItems
     @State private var characterStyleItems: [CardItem] = CardItem.stubMultipleCharacterStyleItems
     @State private var locationItems: [CardItem] = CardItem.stubMultipleLocationItems
@@ -56,7 +58,7 @@ struct CreateView: View {
                         Text(stepTitle(for: currentStep))
                             .font(.custom("Fredoka-SemiBold", size: 50))
                         Spacer()
-                        Button("Skip", action: skip)
+                        Button("Skip", action: next)
                             .buttonStyle(SecondaryButtonStyle())
                     }
                     if (stepShowsSubtitleAtTop(for: currentStep)) {
@@ -72,10 +74,22 @@ struct CreateView: View {
                 Spacer()
 
                 HStack {
-                    Button("Cancel", action: cancel)
-                        .buttonStyle(SecondaryButtonStyle())
-                    Button("Next", action: next)
-                        .buttonStyle(PrimaryRoundedButtonStyle())
+                    if (stepShowsCancelButton(for: currentStep)) {
+                        Button("Cancel", action: cancel)
+                            .buttonStyle(SecondaryButtonStyle())
+                    }
+                    else {
+                        Button("Back", action: back)
+                            .buttonStyle(SecondaryButtonStyle())
+                    }
+                    if (stepShowsCreateButton(for: currentStep)) {
+                        Button("Create", action: create)
+                            .buttonStyle(PrimaryRoundedButtonStyle())
+                    }
+                    else {
+                        Button("Next", action: next)
+                            .buttonStyle(PrimaryRoundedButtonStyle())
+                    }
                 }
                 .padding()
             }
@@ -85,6 +99,10 @@ struct CreateView: View {
 
         }
         .background(Color("FaibleLightBackground"))
+    }
+    
+    func create() {
+        
     }
     
     func next() {
@@ -115,12 +133,36 @@ struct CreateView: View {
         }
     }
     
-    func cancel() {
+    func back() {
         
+        //TODO: save current step
+        
+        // move to next step
+        switch currentStep {
+            case .createStory(.duration):
+                currentStep = .createStory(.childsName)
+            case .createStory(.age):
+                currentStep = .createStory(.duration)
+            case .createStory(.gender):
+                currentStep = .createStory(.age)
+            case .createStory(.storyName):
+                currentStep = .createStory(.gender)
+            case .artStyle:
+                currentStep = .createStory(.storyName)
+            case .characterStyle:
+                currentStep = .artStyle
+            case .location:
+                currentStep = .characterStyle
+            case .moral:
+                currentStep = .location
+            break
+            default:
+                currentStep = .createStory(.childsName)
+        }
     }
     
-    func skip() {
-        
+    func cancel() {
+        presentationMode.wrappedValue.dismiss()
     }
     
     @ViewBuilder
@@ -257,6 +299,24 @@ struct CreateView: View {
             return false
         }
     }
+    
+    func stepShowsCancelButton(for step: CreateStep) -> Bool {
+        switch step {
+        case .createStory(.childsName):
+            return true
+        default:
+            return false
+        }
+    }
+    
+    func stepShowsCreateButton(for step: CreateStep) -> Bool {
+        switch step {
+        case .moral:
+            return true
+        default:
+            return false
+        }
+    }
 }
 
 public enum CreateStep {
@@ -279,7 +339,6 @@ struct CreateView_Previews: PreviewProvider {
     static var previews: some View {
         CreateView()
             .previewInterfaceOrientation(.landscapeLeft)
-//            .previewDevice("iPad (10th generation)")
-            .previewDevice("iPad Pro (6th generation)")
+            .previewDevice("iPad mini (6th generation)")
     }
 }
