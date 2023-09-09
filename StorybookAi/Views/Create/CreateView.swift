@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CreateView: View {
     
-    @State private var cardItems: [CardItem] = CardItem.stubMultiple
+    @State private var artStyleItems: [CardItem] = CardItem.stubMultipleArtStyleItems
+    @State private var characterStyleItems: [CardItem] = CardItem.stubMultipleCharacterStyleItems
     @State private var currentStep: CreateStep = .createStory(.childsName)
     
     // Child Name
@@ -170,7 +171,10 @@ struct CreateView: View {
                     })
             
             case .artStyle:
-                AnyView(CardsCarousel(items: $cardItems)).padding(.vertical, 100)
+                AnyView(CardsCarousel(items: $artStyleItems)).padding(.vertical, 100)
+            
+            case .characterStyle:
+                AnyView(CardsCarousel(items: $characterStyleItems)).padding(.vertical, 100)
             
             default:
                 AnyView(Text("default"))
@@ -258,5 +262,6 @@ public enum CreateStoryStep {
 struct CreateView_Previews: PreviewProvider {
     static var previews: some View {
         CreateView()
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }

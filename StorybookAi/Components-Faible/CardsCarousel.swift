@@ -41,7 +41,7 @@ struct CardsCarousel: View {
 }
 
 struct CardsCarousel_Previews: PreviewProvider {
-    @State static private var stubMultiple: [CardItem] = CardItem.stubMultiple
+    @State static private var stubMultiple: [CardItem] = CardItem.stubMultipleArtStyleItems
 
     static var previews: some View {
         CardsCarousel(items: $stubMultiple)
