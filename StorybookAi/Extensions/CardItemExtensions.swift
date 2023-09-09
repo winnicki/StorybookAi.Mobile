@@ -20,4 +20,12 @@ extension CardItem {
             CardItem(value: ["name": "Turtle", "imageAsset": "Turtle", "isSelected": false] as [String : Any]),
         ]
     }
+    
+    static var stubMultipleLocationItems: [CardItem] {
+        [
+            CardItem(value: ["name": "City", "imageAsset": "City", "isSelected": false] as [String : Any]),
+            CardItem(value: ["name": "Jungle", "imageAsset": "Jungle", "isSelected": false] as [String : Any]),
+            CardItem(value: ["name": "Space", "imageAsset": "Space", "isSelected": false] as [String : Any]),
+        ]
+    }
 }

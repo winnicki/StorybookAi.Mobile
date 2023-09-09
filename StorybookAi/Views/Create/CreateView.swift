@@ -11,6 +11,7 @@ struct CreateView: View {
     
     @State private var artStyleItems: [CardItem] = CardItem.stubMultipleArtStyleItems
     @State private var characterStyleItems: [CardItem] = CardItem.stubMultipleCharacterStyleItems
+    @State private var locationItems: [CardItem] = CardItem.stubMultipleLocationItems
     @State private var currentStep: CreateStep = .createStory(.childsName)
     
     // Child Name
@@ -175,6 +176,9 @@ struct CreateView: View {
             
             case .characterStyle:
                 AnyView(CardsCarousel(items: $characterStyleItems)).padding(.vertical, 100)
+            
+            case .location:
+                AnyView(CardsCarousel(items: $locationItems)).padding(.vertical, 100)
             
             default:
                 AnyView(Text("default"))
