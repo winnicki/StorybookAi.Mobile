@@ -33,6 +33,14 @@ struct CreateView: View {
     var body: some View {
         ZStack {
             
+            // ELLIPSE
+            VStack {
+                Image("Ellipse")
+                Spacer()
+            }
+            .ignoresSafeArea()
+            
+            // HEADER AND FOOTER
             VStack {
                 Group {
                     HStack {
@@ -52,9 +60,9 @@ struct CreateView: View {
                     }
                 }
                 .padding(.horizontal, 60)
-                
+
                 Spacer()
-                
+
                 HStack {
                     Button("Cancel", action: cancel)
                         .buttonStyle(SecondaryButtonStyle())
@@ -63,11 +71,13 @@ struct CreateView: View {
                 }
                 .padding(.bottom, 100)
             }
-            
+
+            // CURRENT STEP
             stepView(for: currentStep)
+            
 
         }
-        .background(Color("FaibleBackground"))
+        .background(Color("FaibleLightBackground"))
     }
     
     func next() {
