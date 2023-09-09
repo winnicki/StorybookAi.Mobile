@@ -170,7 +170,7 @@ struct CreateView: View {
                     })
             
             case .artStyle:
-                AnyView(CardsCarousel(items: $cardItems))
+                AnyView(CardsCarousel(items: $cardItems)).padding(.vertical, 100)
             
             default:
                 AnyView(Text("default"))

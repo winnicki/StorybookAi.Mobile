@@ -42,6 +42,7 @@ struct CardView: View {
         .padding(6)
         .background(.white)
         .cornerRadius(24)
+        .shadow(color: .black.opacity(0.08), radius: 12, x: 0, y: 8)
     }
 }
 

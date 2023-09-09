@@ -21,9 +21,9 @@ struct CardsCarousel: View {
             }
             .padding(.leading, 60)
             .padding(.trailing, 80)
-            .padding(.top, 20)
-            .padding(.bottom, 20)
+            .padding(.vertical, 40)
         }
+        .padding(.vertical, 100)
     }
     
     func handleCardSelection(selectedCard: CardItem) {
