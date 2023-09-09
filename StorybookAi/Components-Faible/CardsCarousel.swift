@@ -23,7 +23,6 @@ struct CardsCarousel: View {
             .padding(.trailing, 80)
             .padding(.top, 20)
             .padding(.bottom, 20)
-            Spacer()
         }
     }
     
@@ -46,6 +45,7 @@ struct CardsCarousel_Previews: PreviewProvider {
 
     static var previews: some View {
         CardsCarousel(items: $stubMultiple)
+            .background(Color("FaibleBackground"))
     }
 }
 

@@ -31,7 +31,8 @@ struct CreateView: View {
     @State private var storyName: String = ""
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
+        ZStack {
+            
             VStack {
                 Group {
                     HStack {
@@ -53,8 +54,6 @@ struct CreateView: View {
                 .padding(.horizontal, 60)
                 
                 Spacer()
-                stepView(for: currentStep)
-                Spacer()
                 
                 HStack {
                     Button("Cancel", action: cancel)
@@ -64,8 +63,11 @@ struct CreateView: View {
                 }
                 .padding(.bottom, 100)
             }
-            .background(Color("FaibleBackground"))
+            
+            stepView(for: currentStep)
+
         }
+        .background(Color("FaibleBackground"))
     }
     
     func next() {
