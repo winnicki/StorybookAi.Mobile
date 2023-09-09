@@ -37,14 +37,17 @@ struct CreateView: View {
     @State private var storyName: String = ""
     
     var body: some View {
-        ZStack {
+        ZStack() {
             
-            // ELLIPSE
-            VStack {
+            //ELLIPSE
+            GeometryReader { geometry in
                 Image("Ellipse")
-                Spacer()
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: geometry.size.width, height: geometry.size.height / 1.7, alignment: .top)
+                    .clipped()
+                    .ignoresSafeArea()
             }
-            .ignoresSafeArea()
             
             // HEADER AND FOOTER
             VStack {
@@ -56,7 +59,6 @@ struct CreateView: View {
                         Button("Skip", action: skip)
                             .buttonStyle(SecondaryButtonStyle())
                     }
-                    .padding(.top, 100)
                     if (stepShowsSubtitleAtTop(for: currentStep)) {
                         HStack {
                             Text(stepSubtitle(for: currentStep))
@@ -75,12 +77,11 @@ struct CreateView: View {
                     Button("Next", action: next)
                         .buttonStyle(PrimaryRoundedButtonStyle())
                 }
-                .padding(.bottom, 100)
+                .padding()
             }
 
             // CURRENT STEP
             stepView(for: currentStep)
-            
 
         }
         .background(Color("FaibleLightBackground"))
@@ -176,13 +177,13 @@ struct CreateView: View {
                     })
             
             case .artStyle:
-                AnyView(CardsCarousel(items: $artStyleItems)).padding(.vertical, 100)
+                AnyView(CardsCarousel(items: $artStyleItems))
             
             case .characterStyle:
-                AnyView(CardsCarousel(items: $characterStyleItems)).padding(.vertical, 100)
+                AnyView(CardsCarousel(items: $characterStyleItems))
             
             case .location:
-                AnyView(CardsCarousel(items: $locationItems)).padding(.vertical, 100)
+                AnyView(CardsCarousel(items: $locationItems))
             
             case .moral:
                 AnyView(InputView(header: stepSubtitle(for: currentStep)) {
@@ -278,5 +279,7 @@ struct CreateView_Previews: PreviewProvider {
     static var previews: some View {
         CreateView()
             .previewInterfaceOrientation(.landscapeLeft)
+//            .previewDevice("iPad (10th generation)")
+            .previewDevice("iPad Pro (6th generation)")
     }
 }
