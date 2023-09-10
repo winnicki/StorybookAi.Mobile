@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import RealmSwift
+import SwiftBSON
 
 struct CreateView: View {
+    
+    @EnvironmentObject private var realmApp: RealmSwift.App
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -83,8 +87,12 @@ struct CreateView: View {
                             .buttonStyle(SecondaryButtonStyle())
                     }
                     if (stepShowsCreateButton(for: currentStep)) {
-                        Button("Create", action: create)
-                            .buttonStyle(PrimaryRoundedButtonStyle())
+                        Button("Create") {
+                            Task {
+                                await create()
+                            }
+                        }
+                        .buttonStyle(PrimaryRoundedButtonStyle())
                     }
                     else {
                         Button("Next", action: next)
@@ -101,9 +109,46 @@ struct CreateView: View {
         .background(Color("FaibleLightBackground"))
     }
     
-    func create() {
+    func create() async {
+        let user = realmApp.currentUser
         
+        // Convert Swift strings to BSON strings
+        let storyNameBSON = BSON.string(storyName)
+        let selectedMoralBSON = BSON.string(selectedMoral!)
+        let childNameBSON = BSON.string(childName)
+        let selectedGenderBSON = BSON.string(selectedGender!)
+
+        // Convert selectedDuration and selectedAge to Int32
+        if let selectedDurationInt32 = Int32(selectedDuration!),
+           let selectedAgeInt32 = Int32(selectedAge!) {
+
+            // Create the BSONDocument with BSON values
+            let storyDocument: BSONDocument = [
+                "Title": storyNameBSON,
+                "ArtStyle": "Cartoon",
+                "CharacterStyle": "Boy",
+                "Location": "New York City",
+                "Moral": selectedMoralBSON,
+                "ReadingDuration": BSON.int32(selectedDurationInt32),
+                "Child": [
+                    "Name": childNameBSON,
+                    "Age": BSON.int32(selectedAgeInt32),
+                    "Gender": selectedGenderBSON
+                ]
+            ]
+
+            do {
+                let result = try await user!.functions.CreateStory([AnyBSON(storyDocument.toExtendedJSONString())])
+                print("Called function 'createstory' and got result: \(result)")
+            } catch {
+                print("Function call failed: \(error.localizedDescription)")
+            }
+        } else {
+            // Handle the case where selectedDuration or selectedAge cannot be converted to Int32
+            print("Error: selectedDuration or selectedAge cannot be converted to Int32")
+        }
     }
+
     
     func next() {
         

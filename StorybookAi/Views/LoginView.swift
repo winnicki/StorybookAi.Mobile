@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 /// Represents the login screen. We will have a button to log in anonymously.
 struct LoginView: View {
+    
+    @EnvironmentObject private var realmApp: RealmSwift.App
     
     // Hold an error if one occurs so we can display it.
     @State var error: Error?
@@ -27,7 +30,7 @@ struct LoginView: View {
             Button("Log in anonymously") {
                 // Button pressed, so log in
                 isLoggingIn = true
-                app!.login(credentials: .anonymous) { result in
+                realmApp.login(credentials: .anonymous) { result in
                     isLoggingIn = false
                     if case let .failure(error) = result {
                         print("Failed to log in: \(error.localizedDescription)")

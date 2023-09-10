@@ -11,6 +11,7 @@
 		A200DB0C297DCAAB00FDFF8E /* StoryPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A200DB0B297DCAAB00FDFF8E /* StoryPage.swift */; };
 		A21A338B286913D700EFF786 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21A338A286913D700EFF786 /* NavigationBar.swift */; };
 		A21D677F28662E9700D894A7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21D677E28662E9700D894A7 /* HomeView.swift */; };
+		A227EF482AAE71B200DAF1B8 /* SwiftBSON in Frameworks */ = {isa = PBXBuildFile; productRef = A227EF472AAE71B200DAF1B8 /* SwiftBSON */; };
 		A229E5162890C9D700F9EC2E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A229E5152890C9D700F9EC2E /* User.swift */; };
 		A22B93A229E0C9F800E7B4E6 /* Fredoka-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A24C1A0C29E0C8360073D359 /* Fredoka-Medium.ttf */; };
 		A22B93A529E0CC3F00E7B4E6 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A22B93A429E0CC3B00E7B4E6 /* SF-Pro-Text-Regular.otf */; };
@@ -107,6 +108,7 @@
 			files = (
 				A29308B2281F570700AA941C /* RealmSwift in Frameworks */,
 				A29308B0281F570700AA941C /* Realm in Frameworks */,
+				A227EF482AAE71B200DAF1B8 /* SwiftBSON in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +273,7 @@
 			packageProductDependencies = (
 				A29308AF281F570700AA941C /* Realm */,
 				A29308B1281F570700AA941C /* RealmSwift */,
+				A227EF472AAE71B200DAF1B8 /* SwiftBSON */,
 			);
 			productName = PracticeSwiftUI;
 			productReference = A2930893281EBCF000AA941C /* StorybookAi.app */;
@@ -302,6 +305,7 @@
 			mainGroup = A293088A281EBCF000AA941C;
 			packageReferences = (
 				A29308AE281F570700AA941C /* XCRemoteSwiftPackageReference "realm-swift" */,
+				A227EF462AAE71B200DAF1B8 /* XCRemoteSwiftPackageReference "swift-bson" */,
 			);
 			productRefGroup = A2930894281EBCF000AA941C /* Products */;
 			projectDirPath = "";
@@ -582,6 +586,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A227EF462AAE71B200DAF1B8 /* XCRemoteSwiftPackageReference "swift-bson" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mongodb/swift-bson";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.0;
+			};
+		};
 		A29308AE281F570700AA941C /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -593,6 +605,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A227EF472AAE71B200DAF1B8 /* SwiftBSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A227EF462AAE71B200DAF1B8 /* XCRemoteSwiftPackageReference "swift-bson" */;
+			productName = SwiftBSON;
+		};
 		A29308AF281F570700AA941C /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A29308AE281F570700AA941C /* XCRemoteSwiftPackageReference "realm-swift" */;

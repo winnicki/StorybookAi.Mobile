@@ -7,15 +7,17 @@
 
 import Foundation
 import SwiftUI
+import RealmSwift
 
 /// A button that handles logout requests.
 struct LogoutButton: View {
     
+    @EnvironmentObject private var realmApp: RealmSwift.App
     @State var isLoggingOut = false
     
     var body: some View {
         Button("Log Out") {
-            guard let user = app!.currentUser else {
+            guard let user = realmApp.currentUser else {
                 return
             }
             isLoggingOut = true
@@ -25,6 +27,6 @@ struct LogoutButton: View {
                 // that the currentUser has changed. Nothing more to do here.
                 print("Logged out")
             }
-        }.disabled(app!.currentUser == nil || isLoggingOut)
+        }.disabled(realmApp.currentUser == nil || isLoggingOut)
     }
 }
